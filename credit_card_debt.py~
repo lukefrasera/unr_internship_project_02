@@ -19,7 +19,6 @@ def PrinciplePaid(monthly_payment, monthly_interest_rate, outstanding_balance):
 	return principle_paid
 
 
-#calculates amount of principle remaining after monthly payment
 def RemainingBalance(outstanding_balance, principle_paid):
 	remaining_balance = outstanding_balance - principle_paid
 	return remaining_balance

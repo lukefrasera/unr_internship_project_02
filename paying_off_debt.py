@@ -7,22 +7,6 @@ Return: ?
 Definition:  
 '''
 
-def CompoundInterest (outstanding_balance, monthly_interest_rate):
-	
-	principle = outstanding_balance
-	for index in range(0,12):
-		interest= outstanding_balance + (outstanding_balance * monthly_interest_rate)
-		principal = interest
-	
-	return principle
-
-
-
-def MonthlyPayment (outstanding_balance, monthly_interest_rate):
-	total_balance = CompoundInterest(outstanding_balance, monthly_interest_rate)
-	monthly_payment = total_balance/12
-	return monthly_payment
-
 
 
 def RemainingBalance(outstanding_balance, monthly_interest_rate, monthly_payment):
@@ -32,6 +16,14 @@ def RemainingBalance(outstanding_balance, monthly_interest_rate, monthly_payment
 		remaining_balance = outstanding_balance - monthly_payment
 	return remaining_balance
 	
+def MonthlyPayment (outstanding_balance, monthly_interest_rate):
+	monthly_payment = 10.0
+	remaining_balance = RemainingBalance(outstanding_balance, monthly_interest_rate, monthly_payment)
+	if (remaining_balance > 0):	
+		monthly_payment = monthly_payment + 10
+		remaining_balance = RemainingBalance(outstanding_balance, monthly_interest_rate, monthly_payment)
+	
+	return monthly_payment 
 
 
 def main ():
@@ -41,11 +33,8 @@ def main ():
 	annual_interest_rate = float(raw_input('Enter the annual credit card interest rate as a decimal: '))
 
 	monthly_interest_rate = annual_interest_rate / 12
-
-	monthly_payment = MonthlyPayment (outstanding_balance, monthly_interest_rate)
-
-	print monthly_payment
-	print RemainingBalance(outstanding_balance, monthly_interest_rate, monthly_payment)
+	
+	print MonthlyPayment(outstanding_balance, monthly_interest_rate)
 	
 	
 

@@ -10,21 +10,34 @@ Definition:
 
 
 def RemainingBalance(outstanding_balance, monthly_interest_rate, monthly_payment):
-
-	for index in range(0,12):
-		outstanding_balance = outstanding_balance * (1 + monthly_interest_rate)
-		remaining_balance = outstanding_balance - monthly_payment
+	
+	remaining_balance = outstanding_balance - monthly_payment
+	
+	for index in range(0,11):
+		remaining_balance = outstanding_balance * (1 + monthly_interest_rate)
+		remaining_balance = remaining_balance - monthly_payment
+		print remaining_balance
+		
 	return remaining_balance
 	
 def MonthlyPayment (outstanding_balance, monthly_interest_rate):
 	monthly_payment = 10.0
 	remaining_balance = RemainingBalance(outstanding_balance, monthly_interest_rate, monthly_payment)
-	if (remaining_balance > 0):	
+	
+	while(remaining_balance > 0):	
 		monthly_payment = monthly_payment + 10
 		remaining_balance = RemainingBalance(outstanding_balance, monthly_interest_rate, monthly_payment)
 	
-	return monthly_payment 
-
+	return monthly_payment
+	
+def PaymentTerm (remaining_balance, monthly_payment):
+	
+	if remaining_balance + monthly_payment < 0:
+		print '11 months'
+		
+	elif remaining_balance + monthly_payment > 0:
+		print '12 months'
+	
 
 def main ():
 
@@ -34,7 +47,12 @@ def main ():
 
 	monthly_interest_rate = annual_interest_rate / 12
 	
-	print MonthlyPayment(outstanding_balance, monthly_interest_rate)
+	monthly_payment = MonthlyPayment (outstanding_balance, monthly_interest_rate)
+	
+	
+	print MonthlyPayment (outstanding_balance, monthly_interest_rate)
+	print RemainingBalance(outstanding_balance, monthly_interest_rate, monthly_payment)
+
 	
 	
 

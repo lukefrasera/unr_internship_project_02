@@ -2,9 +2,9 @@
 
 '''
 Antenna Inductance
-Params: 
-Return: ?
-Definition:  
+Params: <I>, <N1>, <R1>, <N>, <IR>, <a>, <b>, <N2>, <R2>, <r>, <x>
+Return: floating point values calculated by the functions using antenna inductance equations (given).
+Definition: Calculates the inductance of 3 types of antennas, and the mutual inductance between two types for increments of .05 between a given minimum and maximum distance.
 '''
 
 import math
@@ -63,7 +63,7 @@ def main():
         r = maximum_distance
         while (r >= minimum_distance):
             print 'Distance:' , r
-            print 'Line Antenna Inductance:' , LineAntenna(r, I)
+            print 'Line Antenna Inductance:' , LineAntennaInductance(r, I)
             r -= .05
 
     if antenna_type == 'Coil Antenna':

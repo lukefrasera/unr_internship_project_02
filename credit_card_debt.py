@@ -3,7 +3,7 @@
 '''
 Credit Card Debt
 Params: <monthly_payment>, <principle_paid>, <remaining_balance>, <outstanding_balance>, <minimum_monthly_payment_rate>, <monthly_interest_rate>
-Return: ?
+Return: Monthly Payment, Principle Paid, Remaining Balance
 Definition: Calculates minimum monthly payment, principle paid each month, and the remaining principle balance after that month's payment. At the end pf 12 months, it calculates the amount of principle paid off, and the amount of principle remaining. 
 '''
 
@@ -25,7 +25,7 @@ def RemainingBalance(outstanding_balance, principle_paid):
 	return remaining_balance
 
 
-def monthly_ouput (monthly_payment, principle_paid, remaining_balance, outstanding_balance, minimum_monthly_payment_rate, monthly_interest_rate):
+def MonthlyOutput(monthly_payment, principle_paid, remaining_balance, outstanding_balance, minimum_monthly_payment_rate, monthly_interest_rate):
 	
 	index = 0
 	initial_balance = outstanding_balance
@@ -66,7 +66,7 @@ def main():
 
 	remaining_balance = RemainingBalance(outstanding_balance, principle_paid)
 
-	monthly_ouput (monthly_payment, principle_paid, remaining_balance, outstanding_balance, minimum_monthly_payment_rate, monthly_interest_rate)
+	MonthlyOutput(monthly_payment, principle_paid, remaining_balance, outstanding_balance, minimum_monthly_payment_rate, monthly_interest_rate)
 
 
 

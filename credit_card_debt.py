@@ -45,8 +45,8 @@ def MonthlyOutput(monthly_payment, principle_paid, remaining_balance, outstandin
 		index = index + 1
 		
 	print "RESULT"
-	print "> Total amount paid: $" , str("{0:0.2f}".format(initial_balance - remaining_balance))
-	print "> Remaining balance: $" , str("{0:0.2f}".format(remaining_balance))
+	print "> Total amount paid: ${0:0.2f}".format(initial_balance - remaining_balance)
+	print "> Remaining balance: ${0:0.2f}".format(remaining_balance)
 	
 
 

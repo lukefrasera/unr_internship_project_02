@@ -70,7 +70,7 @@ def main():
         x = maximum_distance
         while (x >= minimum_distance):
             print 'Distance:' , x 
-            print 'Coil Antenna Inductance:' , CoilAntenna(I, R1, x)
+            print 'Coil Antenna Inductance:' , CoilAntennaInductance(I, R1, x)
             print 'Mutual Inductance' , TwoCoilAntennae(N1, R1, N2, R2, x)
             x -= .05
             

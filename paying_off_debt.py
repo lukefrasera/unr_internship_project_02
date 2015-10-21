@@ -9,20 +9,25 @@ Definition: Calculates the monthly payment (multiple of ten) needed to pay off a
 
 
 def MonthlyPayment(outstanding_balance, monthly_interest_rate):
+    #set initial monthly payment and number of months to pay debt
     monthly_payment = 0.0
     number_of_months = 0
     debt = True
+
     while debt:
         monthly_payment += 10
         remaining_balance = outstanding_balance
+        #calculate balance after 12 months
         for i in xrange(12):
             if remaining_balance > 0:
                 remaining_balance *= (1.0 + monthly_interest_rate)
                 remaining_balance -= monthly_payment
+
             else:
                 number_of_months = i
                 debt = False
                 break
+            #breaks out of for loop when balance is less than 0
 
 
     return monthly_payment, remaining_balance, number_of_months
@@ -37,9 +42,9 @@ def main ():
     monthly_payment, remaining_balance, number_of_months = MonthlyPayment(outstanding_balance, monthly_interest_rate)
 
     print "RESULT:"
-    print "Monthly payment to pay off debt in 1 year: ", monthly_payment
-    print "Balance: ", "{0:0.2f}".format(remaining_balance)
-    print "Number of months needed: ", number_of_months
+    print "Monthly payment to pay off debt in 1 year: ${0:0.2f}".format(monthly_payment)
+    print "Balance: ${0:0.2f}".format(remaining_balance)
+    print "Number of months needed:", number_of_months
 
 
 

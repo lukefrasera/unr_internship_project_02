@@ -32,10 +32,9 @@ def MonthlyOutput(monthly_payment, principle_paid, remaining_balance, outstandin
 	
 	while index < 12:
 		print "Month: " + str(index + 1)
-		print "> Minimum Monthly Payment: $" , str("{0:0.2f}".format(monthly_payment))
-		print "> Minimum Monthly Payment: $" , str("{0:0.2f}".format(monthly_payment))
-		print "> Principle Paid: $" , str("{0:0.2f}".format(principle_paid))
-		print "> Remaining Balance: $" , str("{0:0.2f}".format(remaining_balance))
+		print "> Minimum Monthly Payment: ${0:0.2f}".format(monthly_payment)
+		print "> Minimum Monthly Payment: ${0:0.2f}".format(monthly_payment)
+		print "> Principle Paid: ${0:0.2f}".format(principle_paid)
 
 		outstanding_balance = remaining_balance
 		monthly_payment = MonthlyPayment(outstanding_balance, minimum_monthly_payment_rate)
